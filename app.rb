@@ -4,11 +4,17 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
-#Устанавливаем соединение с БД barbershop.db
-set :database, "sqlite3:base.db"
+#Устанавливаем соединение с БД
+set :database, "sqlite3:pishop.db"
 
 #Cоздание модели БД в классе Client
-class Programm_lang < ActiveRecord::Base
+class Product < ActiveRecord::Base
+end
+
+#Создание миграции БД в терминале "$ rake db:create_migration NAME=имя модели во множественном числе"
+#Создание структуры таблицы (поля) в /db/migrate
+
+
 
 get '/' do
 	erb :index
