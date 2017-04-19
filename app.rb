@@ -12,8 +12,14 @@ class Product < ActiveRecord::Base
 end
 
 #Создание миграции БД в терминале "$ rake db:create_migration NAME=имя модели во множественном числе"
+
+#$ rake db:create_migration NAME=create_products
 #Создание структуры таблицы (поля) в /db/migrate
 
+#$ rake db:create_migration NAME=add_products
+#Создание структуры таблицы (поля) в /db/migrate
+
+#Миграция схем в БД "$ rake db:migrate"
 
 
 get '/' do

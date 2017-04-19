@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
     #Создание таблицы с полями в БД
     create_table :products do |t|
       t.string  :title
-      t.text    :descrition
+      t.text    :description
       t.decimal :price
       t.decimal :size
       t.boolean :is_spicy
