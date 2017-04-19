@@ -9,7 +9,8 @@ class AddProducts < ActiveRecord::Migration[5.0]
       :is_spicy => false,
       :is_veg => false,
       :is_best_offer => false,
-      :path_to_img => '/images/hawaii.jpg'
+      :small_img => '/images/hawaii.jpg',
+      :big_img => '/images/bhawaii.jpg'
     })
     
     Product.create ({
@@ -20,7 +21,8 @@ class AddProducts < ActiveRecord::Migration[5.0]
       :is_spicy => false,
       :is_veg => true,
       :is_best_offer => true,
-      :path_to_img => '/images/veg.jpg'
+      :small_img => '/images/veg.jpg',
+      :big_img => '/images/bveg.jpg'
     })
     
     Product.create ({
@@ -31,7 +33,8 @@ class AddProducts < ActiveRecord::Migration[5.0]
       :is_spicy => true,
       :is_veg => false,
       :is_best_offer => false,
-      :path_to_img => '/images/pepperoni.jpg'
+      :small_img => '/images/pepperoni.jpg',
+      :big_img => '/images/bpepperoni.jpg'
     })
   end
 end

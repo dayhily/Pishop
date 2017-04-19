@@ -16,13 +16,21 @@
         <script src="/vendor/jquery-1.9.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+		
 		<script src="/app.js"></script>
+		<!-- Увеличить фотографию с помощью позиционирования -->
+		<style type="text/css">
+           .blok1 {position: relative; cursor:pointer; display: inline-block;}
+           .blok1 img + img {position:absolute; left: 0; top:0; z-index:100; display: none;}
+           .blok1:hover img + img {display: block;}
+        </style>
+
 	</head>
 	<body>
 		<div class="container">
 
 			<!-- Static navbar -->
-			<nav class="navbar navbar-default" role="navigation">
+			<nav class="navbar navbar-inverse" role="navigation">
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			      <span class="sr-only">Toggle navigation</span>
@@ -31,14 +39,14 @@
 			      <span class="icon-bar"></span>
 			    </button>
 			    <a href="/">
-				  <img src="/images/logo.png" width="224" height="70" alt="Sansta programming">
+				  <img src="/images/logo.png" class="img-responsive" width="224" height="80" alt="Sansta programming" align="top">
 				</a>
 			  </div>
 			  <div class="navbar-collapse collapse">
 			    <ul class="nav navbar-nav">
-			      <li><a href="/blabla">Blabla</a></li>
-			      <li><a href="/about">About</a></li>
-			      <li><a href="/contacts">Contacts</a></li>
+			      <li ><a href="/blabla"><h1>Blabla</h1></a></li>
+			      <li><a href="/about"><h1>About</h1></a></li>
+			      <li><a href="/contacts"><h1 class="text-right">Contacts</h1></a></li>
 			    </ul>
 			  </div><!--/.nav-collapse -->
 			</nav>

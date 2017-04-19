@@ -1,8 +1,8 @@
   function something()
   {
-    var x=window.localStorage.getItem('aaa');
-    x = x * 1 + 1;
-    window.localStorage.setItem('aaa',x);
+    var x=window.localStorage.getItem('aaa'); //x = hh['aaa'], x-string type
+    x = x * 1 + 1; //x = x + 1, x*1 - make x from string to integer
+    window.localStorage.setItem('aaa',x); //hh['aaa'] = x
          
     alert(x); 
   }

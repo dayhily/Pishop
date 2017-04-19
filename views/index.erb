@@ -1,2 +1,27 @@
 <h2>Hello</h2>
+
+<div class="row" align="center">
+    <% @products.each do |p| %>
+    <div class="col-md-4">
+        <div>
+            <%= p.title %>
+        </div>
+        <div class="blok1">
+            <img src="<%= p.small_img %>"/><img src="<%= p.big_img %>"/>
+        </div>
+        <div>
+            <%= p.description %>
+        </div> <br>
+        <div align="left">
+            Pizza size: <%= p.size %>
+        </div>
+        <div>
+            <%=  %>
+        </div>
+        <div>
+            <%=  %>
+        </div>
+    </div>
+    <% end %>
+</div>
 <button type="button" class="btn btn-success" onclick="something()">Success</button>
