@@ -21,3 +21,21 @@
     }
     return cnt;
   }
+  
+  
+  
+    function cart_get_orders()
+  {
+    var orders = '';
+    for(var i = 0; i < window.localStorage.length; i++)
+    {
+      var key = window.localStorage.key(i); //получаем ключ
+      var value = window.localStorage.getItem(key); //получаем значение по ключу
+      
+      if(key.indexOf('product_') == 0) //если ключ начинается c 'product_'
+      {
+        orders = orders + key + '=' + value + ' ';
+      }
+    }
+    return orders;
+  }
