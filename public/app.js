@@ -6,6 +6,7 @@
     window.localStorage.setItem(key, x); //hh['key'] = x
     
     update_orders();
+    update_orders_button();
   }
   
   function cart_get_number_of_items() //получаем количество товаров по ключу
@@ -24,12 +25,18 @@
     return cnt;
   }
   
-  function update_orders() //обновляем заказ и отправляем в форму с id = "orders_input"
+  function update_orders() //получаем заказ и отправляем в форму с id = "orders_input"
   {
     var orders = cart_get_orders();
     $('#orders_input').val(orders);
   }
   
+  function update_orders_button() //получаем количество товаров и тправляем в форму с id = "orders_button"
+  {
+    var text = 'Cart (' + cart_get_number_of_items() + ')';
+    $('#orders_button').val(text);
+  }
+
   function cart_get_orders() //собираем заказ из localStorage в orders
   {
     var orders = '';
@@ -44,4 +51,10 @@
       }
     }
     return orders;
+  }
+  
+  function clear_cart() //Очистить корзину
+  {
+    window.localStorage.clear();
+    update_orders_button();
   }

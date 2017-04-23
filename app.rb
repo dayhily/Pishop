@@ -27,6 +27,10 @@ get '/' do
 	erb :index
 end
 
+post '/' do
+	redirect to ('/')
+end
+
 get '/about' do
 	erb :about
 end
