@@ -32,9 +32,9 @@ post '/' do
 end
 
 get '/about' do
-	erb :about
+	erb "about"
 end
 
 post '/cart' do
-	erb :about
+	erb :cart
 end
