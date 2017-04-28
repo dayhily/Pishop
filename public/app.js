@@ -5,7 +5,7 @@
     x = x * 1 + 1; //x = x + 1, x*1 - make x from string to integer
     window.localStorage.setItem(key, x); //hh['key'] = x
     
-    update_orders();
+    update_orders_input();
     update_orders_button();
   }
   
@@ -25,7 +25,7 @@
     return cnt;
   }
   
-  function update_orders() //получаем заказ и отправляем в форму с id = "orders_input"
+  function update_orders_input() //получаем заказ и отправляем в форму с id = "orders_input"
   {
     var orders = cart_get_orders();
     $('#orders_input').val(orders);
@@ -47,7 +47,7 @@
       
       if(key.indexOf('product_') == 0) //если ключ начинается c 'product_'
       {
-        orders = orders + key + '=' + value + ' ';
+        orders = orders + key + '=' + value + ',';
       }
     }
     return orders;

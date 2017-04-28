@@ -1,8 +1,21 @@
-
-<!-- Обновляем заказ при загрузке страницы -->
-<script>
-    $(function() {
-        update_orders();
-        update_orders_button();
-        });
-</script>
+<table class="table table-bordered">
+  <thead>
+    <tr class="info">
+      <th>Заказ:</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  
+<!-- Цикл, где каждой переменной st присваивается строка в виде хэша из массива @stylists-->
+  <tbody>
+    <% @products.each do |o|%>
+      <tr>
+        <!-- Вывод на странице /stylist/'stylist_id' значения с ключем stylist_name-->
+        <td width="150"><%= o.id %></td>
+        <td><%= o.title %></td>
+        <td><input id="orders_input" name="orders" type="text"/></td>
+      </tr>
+    <% end%>
+  </tbody> 
+</table>
