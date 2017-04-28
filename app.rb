@@ -35,16 +35,21 @@ get '/about' do
 	erb "about"
 end
 
-get '/cart' do
-	@products=Product.all
-	erb :cart
-end
-
 post '/cart' do
   @orders_input = params[:orders]
   @items = parse_orders_input @orders_input
 
-  redirect to ('/cart')
+ # выводим сообщение о том, что корзина пуста
+  if @items.length == 0
+    return erb :cart_is_empty
+  end
+
+  @items.each do |item|
+    # id, cnt
+    item[0] = Product.find(item[0])
+  end
+
+  erb :cart
 end
 
 #разбиваем строчку заказа orders_input на id продукта и количесво
