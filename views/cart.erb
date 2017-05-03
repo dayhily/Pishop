@@ -33,7 +33,7 @@
    
    <form action="/place_order" method="POST" role="form">
     
-    <input name="order[scope]" type="hidden" value="<%= @orders_input %>" />
+    <input name="order[orders_input]" type="hidden" value="<%= @orders_input %>" />
 
     <div class="form-group">
       <label>Name:</label>
@@ -51,7 +51,6 @@
     </div>
 
     <button type="submit" class="btn btn-success btn-lg">Place this order!</button>
-    <button class="btn btn-danger btn-lg" onclick="return clear_cart();)">Cancel</button>
-
+    <button class="btn btn-danger btn-lg" onclick="return clear_cart();">Cancel</button>
   </form>
 </div>

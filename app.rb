@@ -13,10 +13,7 @@ class Product < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
-end
-
-class Shipment < ActiveRecord::Base
-  validates :scope, presence: true
+  validates :orders_input, presence: true
   validates :name, presence: true
   validates :phone, presence: true
   validates :address, presence: true
@@ -47,7 +44,7 @@ get '/about' do
 end
 
 post '/cart' do
-  @orders_input = params[:orders]
+  @orders_input = params[:orders_input]
   @items = parse_orders_input @orders_input
 
  # выводим сообщение о том, что корзина пуста
@@ -64,12 +61,12 @@ post '/cart' do
 end
 
 post '/place_order' do
-  @shipment = Shipment.new params[:order]
+  @order = Order.create	 params[:order]
 
-  if @shipment.save
+  if @order.save
     erb :order_placed
   else
-    @error = @shipment.errors.full_messages.first
+    @error = @order.errors.full_messages.first
     erb "Error"
   end
 end
