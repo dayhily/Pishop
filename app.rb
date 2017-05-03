@@ -5,10 +5,21 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 #Устанавливаем соединение с БД
+set :bind, '0.0.0.0'
 set :database, "sqlite3:pishop.db"
 
 #Cоздание модели БД в классе Client
 class Product < ActiveRecord::Base
+end
+
+class Order < ActiveRecord::Base
+end
+
+class Shipment < ActiveRecord::Base
+  validates :scope, presence: true
+  validates :name, presence: true
+  validates :phone, presence: true
+  validates :address, presence: true
 end
 
 #Создание миграции БД в терминале "$ rake db:create_migration NAME=имя модели во множественном числе"
@@ -50,6 +61,17 @@ post '/cart' do
   end
 
   erb :cart
+end
+
+post '/place_order' do
+  @shipment = Shipment.new params[:order]
+
+  if @shipment.save
+    erb :order_placed
+  else
+    @error = @shipment.errors.full_messages.first
+    erb "Error"
+  end
 end
 
 #разбиваем строчку заказа orders_input на id продукта и количесво
