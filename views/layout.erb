@@ -26,13 +26,16 @@
            .blok1 img + img {position:absolute; left: 0; top:0; z-index:100; display: none;}
            .blok1:hover img + img {display: block;}
         </style>
+		<!-- Стиль кнопок -->
+		<link rel="stylesheet" href="/app.css">
+
 	
 	</head>
 	<body>
 		<div class="container">
 
 			<!-- Static navbar -->
-			<nav class="navbar navbar-inverse" role="navigation">
+			<nav class="navbar navbar-inner" role="navigation">
 			  <div class="navbar-header">
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			      <span class="sr-only">Toggle navigation</span>
@@ -53,7 +56,7 @@
 					<form action="/cart" method="POST">
 					  <input id="orders_input" name="orders_input" type="hidden"/>
 					  <input id="orders_button" type="submit" class="btn btn-default btn-lg" value ="Cart (...)"/>
-					  <button onclick="clear_cart();" type="button" class="btn btn-default btn-lg">Clear Cart</button>
+					  <button id="clear_button" onclick="clear_cart();" type="button" class="btn btn-default btn-lg">Clear Cart</button>
 					</form>
 				  </li>
 				</ul>
